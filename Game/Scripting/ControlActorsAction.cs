@@ -57,7 +57,7 @@ namespace Unit05.Game.Scripting
 
             // SNAKE 2
             // left
-            if (_keyboardService.IsKeyDown("k"))
+            if (_keyboardService.IsKeyDown("j"))
             {
                 _direction = new Point(-Constants.CELL_SIZE, 0);
             }
@@ -75,7 +75,7 @@ namespace Unit05.Game.Scripting
             }
 
             // down
-            if (_keyboardService.IsKeyDown("j"))
+            if (_keyboardService.IsKeyDown("k"))
             {
                 _direction = new Point(0, Constants.CELL_SIZE);
             }
