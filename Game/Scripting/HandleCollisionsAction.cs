@@ -48,14 +48,14 @@ namespace Unit05.Game.Scripting
             List<Actor> body2 = snake2.GetBody();
 
             
-                foreach (Actor segment in snake.GetBody())
+                foreach (Actor segment in body)
                 {
                     if (segment.GetPosition().Equals(snake2.GetHead().GetPosition()))
                     {
                         _isGameOver = true;
                     }
                 }
-                foreach (Actor segment in snake2.GetBody())
+                foreach (Actor segment in body2)
                 {
                     if (segment.GetPosition().Equals(snake.GetHead().GetPosition()))
                     {
