@@ -101,7 +101,7 @@ namespace Unit05.Game.Casting
         private void PrepareBody(Color color)
         {
             Random random = new Random();
-            int x = random.Next(0, ((Constants.MAX_X/Constants.CELL_SIZE) * Constants.CELL_SIZE));
+            int x = (random.Next(0, 10) * Constants.CELL_SIZE);
             int y = Constants.MAX_Y / 2;
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)

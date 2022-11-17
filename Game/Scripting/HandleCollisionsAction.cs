@@ -30,7 +30,7 @@ namespace Unit05.Game.Scripting
             if (_isGameOver == false)
             {
                 HandleSegmentCollisions(cast);
-                HandleGameOver(cast);
+
             }
         }
 
@@ -52,24 +52,24 @@ namespace Unit05.Game.Scripting
                 {
                     if (segment.GetPosition().Equals(snake2.GetHead().GetPosition()))
                     {
-                        _isGameOver = true;
+                          HandleGameOver(cast, snake2);
                     }
                 }
                 foreach (Actor segment in body2)
                 {
                     if (segment.GetPosition().Equals(snake.GetHead().GetPosition()))
                     {
-                        _isGameOver = true;
+                        HandleGameOver(cast, snake);
                     }
                 }
             
         }
 
-        private void HandleGameOver(Cast cast)
+        private void HandleGameOver(Cast cast, Snake snake)
         {
-            if (_isGameOver == true)
-            {
-                Snake snake = (Snake)cast.GetFirstActor("snake");
+            
+            
+                // Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments = snake.GetSegments();
 
                 // create a "game over" message
@@ -88,7 +88,7 @@ namespace Unit05.Game.Scripting
                     segment.SetColor(Constants.WHITE);
                 }
             }
-        }
+        
 
     }
 }
