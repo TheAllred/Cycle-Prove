@@ -41,14 +41,20 @@ namespace Unit05.Game.Scripting
         private void HandleSegmentCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
-            Actor head = snake.GetHead();
-            List<Actor> body = snake.GetBody();
+            Snake snake2 = (Snake)cast.GetActors("snake")[0];
 
-            foreach (Actor segment in body)
-            {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+            Actor head = snake.GetHead();
+            Actor head2 = snake2.GetHead();
+            List<Actor> body = snake.GetBody();
+            List<Actor> body2 = snake2.GetBody();
+
+            foreach (Snake item in cast.GetActors("snake")) {
+                foreach (Actor segment in item.GetBody())
                 {
-                    _isGameOver = true;
+                    if (segment.GetPosition().Equals(item.GetHead().GetPosition()))
+                    {
+                        _isGameOver = true;
+                    }
                 }
             }
         }

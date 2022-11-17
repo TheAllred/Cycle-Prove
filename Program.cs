@@ -1,4 +1,5 @@
-﻿using Unit05.Game.Casting;
+﻿using Unit05.Game;
+using Unit05.Game.Casting;
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
 using Unit05.Game.Services;
@@ -19,8 +20,8 @@ namespace Unit05
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("snake", new Snake());
-            cast.AddActor("snake", new Snake());
+            cast.AddActor("snake", new Snake(Constants.PLAYER_1));
+            cast.AddActor("snake", new Snake(Constants.PLAYER_2));
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
