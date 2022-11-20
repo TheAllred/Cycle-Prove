@@ -52,14 +52,22 @@ namespace Unit05.Game.Scripting
                 {
                     if (segment.GetPosition().Equals(snake2.GetHead().GetPosition()))
                     {
+                        if(_isGameOver == false){
+                             _isGameOver = true;
                           HandleGameOver(cast, snake2);
+                           Constants.PLAYER_2 = Constants.WHITE;
+                        }
                     }
                 }
                 foreach (Actor segment in body2)
                 {
                     if (segment.GetPosition().Equals(snake.GetHead().GetPosition()))
                     {
+                         if(_isGameOver == false){
+                            _isGameOver = true;
                         HandleGameOver(cast, snake);
+                         Constants.PLAYER_1 = Constants.WHITE;
+                         }
                     }
                 }
             
@@ -75,6 +83,7 @@ namespace Unit05.Game.Scripting
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
                 int y = Constants.MAX_Y / 2;
+               
                 Point position = new Point(x, y);
 
                 Actor message = new Actor();

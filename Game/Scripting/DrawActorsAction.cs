@@ -30,6 +30,9 @@ namespace Unit05.Game.Scripting
             List<Actor> segments2 = snake2.GetSegments();
             List<Actor> messages = cast.GetActors("messages");
             
+            
+            snake.GrowTail(1, Constants.PLAYER_1);
+            snake2.GrowTail(1, Constants.PLAYER_2);
             _videoService.ClearBuffer();
             _videoService.DrawActors(segments);
             _videoService.DrawActors(segments2);
